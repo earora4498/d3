@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<style>
+
+.arc text {
+  font: 15px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+      .legend {                                                   
+        font-size: 12px;                                          
+      }                                                           
+      rect {                                                      
+        stroke-width: 2;                                          
+      }       
+
+</style>
+
+<head>
+</head>
+
+<body>
+<script src="d3.js" charset="utf-8"></script>
+<h1>
+This pie chart is utter madness
+</h1>
+<button onclick="changeArc()" type="button">Eat some pie</button>
+<script>
+
+var dataset = [
+	{label: 'MS', count: 371},
+	{label: 'Rehab', count: 217},
+	{label: 'PEDS', count: 208},
+	{label: 'Home Health', count: 185},
+	{label: 'ICU', count: 144},
+	{label: 'Case Manager', count:131}
+	];
+
+var pie = d3.layout.pie();
+
+var color = d3.scale.category20c();
+
+var w = 600;
+var h = 600;
+
+var legendRectSize = 18;
+var legendSpacing = 4;
+
+var outerRadius = 150;
+var innerRadius = 0;
+
+var arc = d3.svg.arc()
+				.innerRadius(innerRadius)
+				.outerRadius(outerRadius);
+
+var largeArc = d3.svg.arc()
+				 .innerRadius(100)
+				 .outerRadius(outerRadius);
+
+var svg = d3.select("body")
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+
+var arcs = svg.selectAll("g.arc")
+			.data(pie(dataset))
+            .enter()
+            .append("g")
+            .attr("class", "arc")
+            .attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")")
+            .on("click",changeArc);
+
+arcs.append("path")
+	.attr("fill", function(d,i) {
+		return color(i);
+	})
+	.attr("d", arc);
+
+function changeArc() {
+		svg.selectAll("path")
+	 	  .transition()
+	 	  .attr('d', largeArc);
+	 	svg.selectAll("text")
+	 	  .transition()
+	 	  .attr("text-anchor", "start");
+}
+
+ var legend = svg.selectAll('.legend')                     
+          .data(color.domain())                                   
+          .enter()                                                
+          .append('g')                                            
+          .attr('class', 'legend')                                
+          .attr('transform', function(d, i) {                     
+            var height = legendRectSize + legendSpacing;          
+            var offset =  height * color.domain().length / 2;     
+            var horz = -2 * legendRectSize;                       
+            var vert = i * height - offset;                       
+            return 'translate(' + horz + ',' + vert + ')';        
+          });                                                     
+
+        legend.append('rect')                                     
+          .attr('width', legendRectSize)                          
+          .attr('height', legendRectSize)                         
+          .style('fill', color)                                   
+          .style('stroke', color);                                
+          
+        legend.append('text')                                     
+          .attr('x', legendRectSize + legendSpacing)              
+          .attr('y', legendRectSize - legendSpacing)              
+          .text(function(d) { return d; });
+
+</script>
+
+</body>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<style>
+
+.arc text {
+  font: 15px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+</style>
+
+<head>
+</head>
+
+<body>
+<script src="d3.js" charset="utf-8"></script>
+<h1>
+This pie chart is utter madness
+</h1>
+<button onclick="changeArc()" type="button">Eat some pie</button>
+<script>
+
+var list = [];
+/*
+var input = d3.csv("data.csv", function(data) {
+  console.log(data[0]);
+  data.forEach(function(line) {
+  	var parts = line.split(',');
+  	var state = parts[15];
+  	list.push(state);
+  })
+});
+*/
+
+d3.csv("data.csv", function(data) {
+	data.forEach(function(d) {
+		list.push(d.Speciality);
+	})
+});
+
+alert(list.toString());
+
+var frequency = {}, value;
+
+for(var i = 0; i < list.length; i++) {
+    value = list[i];
+    if(value in frequency) {
+        frequency[value]++;
+    }
+    else {
+        frequency[value] = 1;
+    }
+}
+
+var dataset = frequency.values();
+
+for (var key in frequency) {
+	dataset.push(frequency[key]);
+}
+
+var pie = d3.layout.pie();
+
+var color = d3.scale.category20c();
+
+alert(JSON.stringify(dataset[1]));
+
+var w = 600;
+var h = 600;
+
+var outerRadius = 150;
+var innerRadius = 0;
+
+var arc = d3.svg.arc()
+				.innerRadius(innerRadius)
+				.outerRadius(outerRadius);
+
+var largeArc = d3.svg.arc()
+				 .innerRadius(100)
+				 .outerRadius(outerRadius);
+
+var svg = d3.select("body")
+			.append("svg")
+			.attr("width", w)
+			.attr("height", h);
+
+var arcs = svg.selectAll("g.arc")
+			.data(pie(dataset))
+            .enter()
+            .append("g")
+            .attr("class", "arc")
+            .attr("transform", "translate(" + outerRadius + ", " + outerRadius + ")")
+            .on("click",changeArc);
+
+arcs.append("path")
+	.attr("fill", function(d,i) {
+		return color(i);
+	})
+	.attr("d", arc);
+
+function changeArc() {
+		svg.selectAll("path")
+	 	  .transition()
+	 	  .attr('d', largeArc);
+	 	svg.selectAll("text")
+	 	  .transition()
+	 	  .attr("text-anchor", "start");
+}
+
+</script>
+
+</body>
