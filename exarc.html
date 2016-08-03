@@ -21,7 +21,32 @@ path:hover {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
-var data = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89];
+
+d3.csv("data.csv", function(data) {
+	data.forEach(function(d) {
+		list.push(d.Speciality);
+	})
+});
+
+alert(list.toString());
+
+var frequency = {}, value;
+
+for(var i = 0; i < list.length; i++) {
+    value = list[i];
+    if(value in frequency) {
+        frequency[value]++;
+    }
+    else {
+        frequency[value] = 1;
+    }
+}
+
+var dataset = frequency.values();
+
+for (var key in frequency) {
+	dataset.push(frequency[key]);
+	}
 
 var width = 960,
     height = 500;
