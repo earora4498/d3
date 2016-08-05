@@ -21,33 +21,33 @@ path:hover {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+list = [];
+var a,b,c,d,e;
 
-d3.csv("data.csv", function(data) {
-	data.forEach(function(d) {
-		list.push(d.Speciality);
-	})
-});
-
-alert(list.toString());
-
-var frequency = {}, value;
-
-for(var i = 0; i < list.length; i++) {
-    value = list[i];
-    if(value in frequency) {
-        frequency[value]++;
+d3.csv("Employment.csv", function(data) {
+  data.forEach(function(d) {  
+    list.push(d.position_type);
+  })});
+  for (var i = 0; i < list.length; i++) {
+    switch(list[i]) {
+      case "Staff":
+        a++;
+        break;
+      case "Per Diem":
+        b++;
+        break;
+      case "Travel":
+        c++;
+        break;
+      case "Local Contract":
+        d++;
+        break;
+      default:
+        break;
     }
-    else {
-        frequency[value] = 1;
-    }
-}
+  }
 
-var dataset = frequency.values();
-
-for (var key in frequency) {
-	dataset.push(frequency[key]);
-	}
-
+data = [a, b, c ,d]
 var width = 960,
     height = 500;
 
