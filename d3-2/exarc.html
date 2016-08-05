@@ -22,12 +22,15 @@ path:hover {
 <script>
 
 list = [];
-var a,b,c,d,e;
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
 
 d3.csv("Employment.csv", function(data) {
   data.forEach(function(d) {  
     list.push(d.position_type);
-  })});
+  });
   for (var i = 0; i < list.length; i++) {
     switch(list[i]) {
       case "Staff":
@@ -46,8 +49,13 @@ d3.csv("Employment.csv", function(data) {
         break;
     }
   }
+  alert(a);
+  makePie();
+});
 
-data = [a, b, c ,d]
+function makePie() {
+var data = [a, b, c ,d];
+alert(data);
 var width = 960,
     height = 500;
 
@@ -75,6 +83,7 @@ svg.selectAll("path")
     .attr("d", arc)
     .on("mouseover", arcTween(outerRadius, 0))
     .on("mouseout", arcTween(outerRadius - 20, 150));
+  }
 
 function arcTween(outerRadius, delay) {
   return function() {
@@ -84,5 +93,6 @@ function arcTween(outerRadius, delay) {
     });
   };
 }
+
 
 </script>
