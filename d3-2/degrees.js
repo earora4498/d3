@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
+
     <style>
       .legend {                                                    
         font-size: 12px;                                           
@@ -10,8 +7,7 @@
         stroke-width: 2;                                           
       }                                                            
     </style>
-  </head>
-  <body>
+
     <div id="chart"></div>
     <script src="d3.js"></script>
     <script>
@@ -123,5 +119,3 @@ function makePie() {
      })(window.d3);
 
     </script>
-  </body>
-</html>

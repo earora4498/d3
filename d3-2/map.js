@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<meta charset="utf-8">
+
 <style>
 	.state{
 		fill: none;
@@ -89,5 +88,3 @@ function makeMap() {
 	d3.select(self.frameElement).style("height", "600px"); 
 }
 </script>
-
-</body>

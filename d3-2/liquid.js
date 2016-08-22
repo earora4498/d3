@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+
     <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
     <script src="liquidFillGauge.js" language="JavaScript"></script>
     <style>
         .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
-    </style>
-</head>
-<body>
+</style>
 <svg id="fillgauge1" width="97%" height="250"></svg>
 <script language="JavaScript">
 var travel = [];
@@ -43,5 +37,4 @@ function makeLiquid() {
     }
 }
 </script>
-</body>
-</html>
+
