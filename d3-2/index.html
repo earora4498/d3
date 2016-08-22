@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+	<html lang = "en">
+	<head>
+		<meta charset="utf-8">
+		<title>Some charts</title>
+		<link rel="stylesheet" type="text/css">
+		<script src="d4.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="headerDiv">
+			<h2>Some charts</h2>
+
+		<span id="buttonContainer">
+			<button onclick="changeData1()">Dataset 1</button>
+			<button onclick="changeData2()">Dataset 2</button>
+		</span>
+
+		</div>
+
+		
+
+		<script>
+
+			var changeData1;
+			var changeData2;
+
+			var addBar;
+			var removeBar;
+
+			var barSet1 = [ 140, 19, 134, 192, 211, 85, 92, 148, 55, 113, 71, 120, 150, 200, 180, 170, 160, 180, 230, 240 ];
+			var barSet2 = [ 110, 120, 150, 200, 180, 170, 160, 180, 230, 250, 50, 100, 130, 109, 450, 205, 202, 180, 105, 240 ];
+
+			var graphSet1 = [
+				[5, 20], [480, 90], [250, 50], [100, 33], [330, 95],[410, 12], [475, 44], [25,67], [85, 21], [220, 88]];
+
+			var h = 300;
+ 			var w = 800;
+ 			var padding = 30
+ 			var barPadding = 1;
+
+ 			randomBar();
+ 			viewGraph(graphSet1);
+			initialBar(barSet1);
+
+			function randomBar() {
+
+				var dataset = [];
+
+				for (var x = 1; x < 25; x++)	{
+					dataset.push(Math.floor(Math.random()*264));
+				}
+
+ 				var bar_svg = d3.select("body")
+ 								.append("svg")
+ 								.attr("height", h)
+ 								.attr("width", w);
+
+ 				var yScale = d3.scaleLinear().domain([0, d3.max(dataset, function(d){return d;})]).range([h-padding, padding]);
+
+ 				var xScale = d3.scaleBand().domain(d3.range(dataset.length)).rangeRound([padding, w]).padding(.05);
+
+ 				bar_svg.selectAll("rect")
+ 						.data(dataset)
+ 						.enter()
+ 						.append("rect")
+ 						.attr("height", function(d){return h - (yScale(d) + padding)})
+  						.attr("width", xScale.bandwidth())
+  						.attr("x", function(d, i){ return xScale(i);})
+ 						.attr("y", function(d){return (yScale(d));})
+ 						.attr("fill", function(d) {
+							return "rgb(0, 0, " + (d * 10) + ")";
+						});
+
+ 				bar_svg.append("g")
+ 						.attr("class", "barYAxis")
+ 						.attr("transform", "translate (" + padding + ",0)")
+ 						.call(d3.axisLeft(yScale).ticks(5)); 
+
+ 				removeBar = function () {
+ 					xScale.domain(d3.range(dataset.length));
+ 				}
+
+ 				addBar = function (num) {
+ 					if (num == undefined) {
+ 						dataset.push(Math.floor(Math.random())*264);
+ 					}
+
+ 					xScale.domain(d3.range(dataset.length));
+
+ 					var bars = svg.selectAll("rect")
+									.data(dataset)
+									.enter()
+									.append("rect")
+									.attr("x", w)
+									.attr("y", function(d){return yScale(d);})
+									.attr("fill", function(d) {
+										return "rgb(0, 0, " + (d * 10) + ")";
+									});
+ 				}
+ 			}
+ 			function initialBar(dataset) {
+ 				var bar_svg = d3.select("body")
+ 								.append("svg")
+ 								.attr("height", h)
+ 								.attr("width", w);
+
+ 				var yScale = d3.scaleLinear().domain([0, d3.max(dataset, function(d){return d;})]).range([h-padding, padding]);
+
+ 				var xScale = d3.scaleBand().domain(d3.range(dataset.length)).rangeRound([padding, w]).padding(.05);
+
+ 				bar_svg.selectAll("rect")
+ 						.data(dataset)
+ 						.enter()
+ 						.append("rect")
+ 						.attr("height", function(d){return h - (yScale(d) + padding)})
+  						.attr("width", xScale.bandwidth())
+  						.attr("x", function(d, i){ return xScale(i);})
+ 						.attr("y", function(d){return (yScale(d));})
+ 						.attr("fill", function(d) {
+ 							var z = Math.round(183-(d/2));
+ 							return ("rgb(" + z + ", 31 ,52)");
+ 						});
+
+ 				bar_svg.append("g")
+ 						.attr("class", "barYAxis")
+ 						.attr("transform", "translate (" + padding + ",0)")
+ 						.call(d3.axisLeft(yScale).ticks(5)); 
+
+ 				changeData1 = function() {
+
+ 					yScale = d3.scaleLinear().domain([0, d3.max(barSet1, function(d){return d;})]).range([h-padding, padding]);
+ 					xScale = d3.scaleBand().domain(d3.range(barSet1.length)).rangeRound([padding, w]).padding(.05);
+
+ 					bar_svg.selectAll("rect")
+ 					.data(barSet1)
+ 					.transition()
+ 					.duration(1000)
+ 					.attr("height", function(d){return h - (yScale(d)+padding)})
+  					.attr("width", xScale.bandwidth())
+  					.attr("x", function(d, i){ return xScale(i);})
+ 					.attr("y", function(d){return (yScale(d));})
+ 					.attr("fill", function(d) {
+ 						var z = Math.round(183-(d/2));
+						return ("rgb(" + z + ", 31 ,52)");
+					});
+
+ 					bar_svg.selectAll(".barYAxis")
+ 						//.attr("class", "bar_axis")
+ 						//.attr("transform", "translate (" + padding + ",0)")
+ 						.call(d3.axisLeft(yScale).ticks(5));
+ 				}
+ 				changeData2 = function() {
+
+ 					xScale = d3.scaleBand().domain(d3.range(barSet2.length)).rangeRound([padding, w]).padding(.05);
+ 					yScale = d3.scaleLinear().domain([0, d3.max(barSet2, function(d){return d;})]).range([h-padding, padding]);
+
+ 					bar_svg.selectAll("rect")
+ 					.data(barSet2)
+ 					.transition()
+ 					.duration(1000)
+ 					.attr("height", function(d){return h - (yScale(d)+padding)})
+  					.attr("width", xScale.bandwidth())
+  					.attr("x", function(d, i){ return xScale(i);})
+ 					.attr("y", function(d){return (yScale(d));})
+ 					.attr("fill", function(d) {
+ 						var z = Math.round(183-(d/2));
+ 						return ("rgb(" + z + ", 31, 52)");
+					});
+
+ 					bar_svg.selectAll(".barYAxis")
+ 						//.attr("class", "bar_axis")
+ 						//.attr("transform", "translate (" + padding + ",0)")
+ 						.call(d3.axisLeft(yScale).ticks(5)); 
+ 				}
+ 			}
+ 			function viewGraph(dataset) {
+
+				var gxScale = d3.scaleLinear().domain([0, d3.max(dataset, function(d){return d[0];})]).range([padding,w - padding]);
+
+				var gyScale = d3.scaleLinear().domain([0, d3.max(dataset, function(d){return d[1];})]).range([h - padding, padding]);
+				
+				
+				var svg = d3.select("body")
+				.append("svg")
+				.attr("height", h)
+				.attr("width", w)
+
+				svg.append("p");
+
+
+				svg.selectAll("circle")
+ 				.data(dataset)
+ 				.enter()
+ 				.append("circle")
+ 				.attr("cx", function(d) {
+ 					return gxScale(d[0]);
+ 				})
+ 				.attr("cy", function(d) {return gyScale(d[1]); })
+ 				.attr("r", 3)
+ 				.attr("fill", "#A31F34");
+				
+				svg.append("g")
+					.attr("class", "axis")
+					.attr("transform", "translate(0," + (h - padding) + ")")
+					.call(d3.axisBottom(gxScale).ticks(5));
+
+				svg.append("g")
+					.attr("class", "axis")
+					.attr("transform", "translate(" +padding + ",0)")
+					.call(d3.axisLeft(gyScale).ticks(5));
+ 		
+			}
+		</script>
+	</body>
+</html>
