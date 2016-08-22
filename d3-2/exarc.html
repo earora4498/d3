@@ -21,33 +21,39 @@ path:hover {
 <script src="//d3js.org/d3.v3.min.js"></script>
 <script>
 
+list = [];
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
 
-d3.csv("data.csv", function(data) {
-	data.forEach(function(d) {
-		list.push(d.Speciality);
-	})
+d3.csv("Employment.csv", function(data) {
+  data.forEach(function(d) {  
+    list.push(d.position_type);
+  });
+  for (var i = 0; i < list.length; i++) {
+    switch(list[i]) {
+      case "Staff":
+        a++;
+        break;
+      case "Per Diem":
+        b++;
+        break;
+      case "Travel":
+        c++;
+        break;
+      case "Local Contract":
+        d++;
+        break;
+      default:
+        break;
+    }
+  }
+  makePie();
 });
 
-alert(list.toString());
-
-var frequency = {}, value;
-
-for(var i = 0; i < list.length; i++) {
-    value = list[i];
-    if(value in frequency) {
-        frequency[value]++;
-    }
-    else {
-        frequency[value] = 1;
-    }
-}
-
-var dataset = frequency.values();
-
-for (var key in frequency) {
-	dataset.push(frequency[key]);
-	}
-
+function makePie() {
+var data = [a, b, c ,d];
 var width = 960,
     height = 500;
 
@@ -76,7 +82,7 @@ svg.selectAll("path")
     .on("mouseover", arcTween(outerRadius, 0))
     .on("mouseout", arcTween(outerRadius - 20, 150));
 
-function arcTween(outerRadius, delay) {
+    function arcTween(outerRadius, delay) {
   return function() {
     d3.select(this).transition().delay(delay).attrTween("d", function(d) {
       var i = d3.interpolate(d.outerRadius, outerRadius);
@@ -84,5 +90,9 @@ function arcTween(outerRadius, delay) {
     });
   };
 }
+
+  }
+
+
 
 </script>

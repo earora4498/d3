@@ -19,36 +19,32 @@
         'use strict';
 
 var list = [];
-var ms = 0;
-var rehab = 0;
-var peds = 0;
-var home = 0;
-var icu = 0;
-var man = 0;
+var a = 0;
+var b = 0;
+var c = 0;
+var d = 0;
+var m = 0;
 
-d3.csv("newdata.csv", function(data) {
+d3.csv("Education.csv", function(data) {
   data.forEach(function(d) {  
-    list.push(d.Speciality);
+    list.push(d.degree);
   });
   for (var i = 0; i < list.length; i++) {
     switch(list[i]) {
-      case "MS":
-        ms++;
+      case "Associates":
+        a++;
         break;
-      case "Rehab":
-        rehab++;
+      case "Bachelor":
+        b++;
         break;
-      case "PEDS":
-        peds++;
+      case "Certificate":
+        c++;
         break;
-      case "Home Health":
-        home++;
+      case "Doctorate":
+        d++;
         break;
-      case "ICU":
-        icu++;
-        break;
-      case "Case Manager":
-        man++;
+      case "Masters":
+        m++;
         break;
       default:
         break;
@@ -60,12 +56,11 @@ d3.csv("newdata.csv", function(data) {
 function makePie() {
 
       var dataset = [
-  {label: 'MS', count: ms},
-  {label: 'Rehab', count: rehab},
-  {label: 'PEDS', count: peds},
-  {label: 'Home Health', count: home},
-  {label: 'ICU', count: icu},
-  {label: 'Case Manager', count:131}
+  {label: 'Associates', count: a},
+  {label: 'Bachelor', count: b},
+  {label: 'Certificate', count: c},
+  {label: 'Doctorate', count: d},
+  {label: 'Masters', count: m}
   ];
 
 
