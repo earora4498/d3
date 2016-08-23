@@ -1,0 +1,723 @@
+/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
+
+html {
+    color: #333;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+html,body {
+	height: 100%;	
+}
+
+::-moz-selection {
+    background: #EEE;
+    text-shadow: none;
+}
+
+::selection {
+    background: #EEE;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Fonts
+   ========================================================================== */
+   
+@font-face {
+    font-family: 'bill_corp_m3bold';
+    src: url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_bold-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_bold-webfont.woff') format('woff');
+
+}
+
+@font-face {
+    font-family: 'bill_corp_m3extrabold';
+    src: url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_extrabold-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_extrabold-webfont.woff') format('woff');
+
+}
+
+
+@font-face {
+    font-family: 'bill_corp_m3medium_oblique';
+    src: url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_medium_oblique-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_medium_oblique-webfont.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'bill_corp_m3roman';
+    src: url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_roman-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_roman-webfont.woff') format('woff');
+
+}
+
+@font-face {
+    font-family: 'bill_corp_m3super';
+    src: url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_super-webfont.woff2') format('woff2'),
+         url('/wp-content/themes/staffdna//font/ogj_type_design_-_bill_corp_m3_super-webfont.woff') format('woff');
+
+}     
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+body {font-family: 'bill_corp_m3roman', Arial, san-serif}
+h1,h2,h3,h4,h5{text-transform: uppercase;font-family: 'bill_corp_m3bold'; color:#424242 }
+a {color:inherit; text-decoration: none}
+li{list-style: square}
+.btn, .btn-small{padding:10px 15px; background:#ED7034; text-align:center; border-radius:5px; transition: background-color 0.3s;}
+#header .menu li:hover, .btn:hover{background:#2376a7; color:#FFF;}
+.btn-small{padding: 5px 7px}
+.sprite{display:inline-block; background: url('/wp-content/themes/staffdna//img/sprite.png') no-repeat; text-indent: -999em}
+p .alignright{float:right; margin: 0 0 10px 10px}
+p .alignleft{float:left; margin: 0 10px 10px 0}
+
+/* CUSTOM ICONS AND SPRITE IMAGES */
+.icon-arrow-white{width:68px; height: 74px}
+.icon-lock{width: 69px; height: 78px; background-position: 0 -75px}
+.icon-money{width: 65px; height: 78px; background-position: 0 -153px}
+.logo-white{width: 120px; height: 20px; background-position: 0 -231px}
+.icon-paper-color{width: 57px; height: 68px; background-position: 0 -251px}
+.icon-lock-color{width: 59px; height: 78px; background-position: 0 -319px}
+.icon-arrow-color{width: 68px; height: 74px; background-position: 0 -397px}
+.icon-portfolio-color{width: 87px; height: 55px; background-position: 0 -471px}
+.icon-exclamation{width: 21px; height: 72px; background-position: 0 -526px}
+.icon-money-color{width: 65px; height: 78px; background-position: 0 -598px}
+.icon-badge{width: 138px; height: 139px; background-position: 0 -676px}
+.icon-client-profile{width: 96px; height: 63px; background-position: 0 -815px}
+.icon-client-lead{width: 96px; height: 60px; background-position: 0 -878px}
+
+/* HEADER */
+#header {background:#FFF}
+#header #top{height:130px}
+
+#header .logo{float:left; margin-left:60px}
+#header .logo h1{display: block; margin: 40px 0 10px 0; background: url('/wp-content/themes/staffdna//img/StaffDNA_logo.png') no-repeat; text-indent: -999em; background-size: 166px 30px; width: 166px; height: 30px}
+#header .logo small{font-family: 'bill_corp_m3bold'; font-weight:bold; font-size:12px; text-transform: uppercase; letter-spacing: 1px; color:#000}
+
+#header .social-buttons{float:right; width:265px; margin:25px 0 0 0; font-size: 20px; line-height: 27px; font-family: 'bill_corp_m3extrabold'; color:#FFF; text-transform: uppercase;}
+#header .social-buttons li{display:inline-table; margin-right:7px; width:30%; text-align: center; background: #ED7034; border-radius: 5px; transition: background-color 0.3s;}
+#header .signup-button:hover, #header .social-buttons li:hover{background:#2376a7; color:#FFF}
+#header .social-buttons li a{float:left; width:100%; line-height: 34px;}
+#header .social-buttons li:first-child{width:100%; margin-bottom:9px; font-size:15px; padding:0}
+#header .social-buttons li:first-child > a{display: inherit; width: 100%; padding:0}
+#header .social-buttons li:last-child{margin-right:0}
+
+#header .signup-button{float:right; margin:25px -28px 0 0; text-transform: uppercase; font: 20px 'bill_corp_m3extrabold'; color:#FFF; background:#56add7; padding:23px 12px 24px 12px; letter-spacing: 2px }
+#header .signup-button:hover{color:#FFF}
+
+#header .menu {position:relative; font-family:'bill_corp_m3extrabold'; letter-spacing:2px; height:82px; background:rgba(57, 159, 209, 0.85); font-size:16px; color:#FFF; text-transform: uppercase;}
+#header .menu ul {display:table; width:97%; list-style: none; margin:auto; padding:0;}
+#header .menu ul > li{display:table-cell; width:16.66%; line-height:62px; text-align:center; transition: background-color 0.3s;}
+#header .menu ul > li > a{display:block}
+
+#header .menu ul > li > ul{position:absolute; margin-top:8px; width: inherit; display:none;}
+#header .menu ul > li:hover > ul{display: block}
+#header .menu ul > li:hover .btn{background: inherit;}
+#header .menu ul > li > ul > li, #header .menu ul > li > ul > li a{display:inherit; text-align:left; width:100%; padding:0 20px; line-height: 58px;}
+#header .menu ul > li > ul > li:hover, #header .menu ul > li > ul > li:hover a{background: #367DA6;}
+
+#header .menu .btn{margin: 20px 0 18px 0; height: 44px; line-height: 26px; padding: 10px 10px;}
+
+/* HOME */
+.home #bg{height: 659px; margin-top:-82px; padding:152px 0 0 482px; background: url('/wp-content/themes/staffdna//img/bg_nurse_boy.jpg'); background-repeat: no-repeat; background-position: -195px top; text-align:center; text-transform: uppercase; color:#ED7034; font-family: 'bill_corp_m3super'; } 
+.home #bg p{margin:40px auto 47px auto; font-size:40px; letter-spacing: 2px; line-height: 45px }
+.home #bg .active-text{font-size:20px; margin:10px 0 -3px 0; font-family:'bill_corp_m3roman'; font-weight: bold; letter-spacing: 1px}
+.home #bg .icon-badge{text-indent: 0; color:#FFF; transform:rotate(-7deg); padding:35px 10px 0 10px; font-size:18px; line-height: 20px; margin:-30px 10px 0 90px; letter-spacing: 1px}
+.home #bg .icon-badge span{position:relative; top:-5px; font-size:9px; font-family:'bill_corp_m3roman'; letter-spacing: normal;}
+.home #bg .badge-description{color:#333; font-size:20px; text-transform: none; font-family:'bill_corp_m3roman'; font-weight:bold; letter-spacing: 1px; margin:-5px 50px 0 0}
+.home #bg .counter{display: inline-block; font-family: 'bill_corp_m3bold'; width: 382px; margin:0 0 0 118px; text-align:left; font-size:15px; letter-spacing: 0.8px; line-height: 64px}
+.home #bg .counter > .box{font-size:48px; border:#ED7034 solid 5px; padding:10px 0 5px 10px; line-height:35px; margin:0 12px 12px 0; letter-spacing:5px; min-width:240px}
+.home #bg .counter .digit:first-child:before{content:""; }
+.home #bg .counter .digit:before{content:"|"; font-weight:normal; font-family: inital; font-size:40px; top:-5px; position:relative;}
+
+/* HOME > Features */
+.home #features{padding-top:20px; padding-bottom:20px; background-color:#56add7; color:#FFF; text-align: center}
+.home #features .content{max-width: 215px; margin:auto}
+.home #features h2{font-size:22px; margin:12px 0 0 0; line-height: 25px; color:#FFF; font-weight: normal;}
+.home #features p{margin:5px 0 0 0; font-size:14px}
+
+/* HOME > Browse Jobs */
+.home #browse_jobs{line-height:28px; font-size: 16px; letter-spacing: 0.1px}
+.home #browse_jobs h3{margin:0 0 20px 0;}
+.home #browse_jobs .search-jobs-button{ position: absolute; margin: -57px 0 0 130px;  font-family:'bill_corp_m3bold'; text-transform:uppercase;  background: #56add7; color:#FFF; padding:8px 12px;}
+.home #browse_jobs .search-jobs-button:hover{background: #2376a7}
+.home #browse_jobs .loading{color:#EF7334; margin-left:190px}
+#browse_jobs .grid:nth-child(1){overflow: visible;}
+
+/* HOME > Browse Jobs > Job List */
+.home #browse_jobs .build-button{z-index:1; background: #EF7334; width: 496px; position: absolute; margin-left: 50.8%; text-align: center; left:0}
+
+.home #job-list{height: 640px; overflow: hidden; margin:0 0 20px 0; padding:0; color:#808080}
+.home #job-list .job-card{float:left; margin:0 0 30px 0; padding:34px 20px 34px 20px; background: #E3E3E3; text-align:center; max-height: 194px; min-height: 194px; min-width:231px}
+.home #job-list .job-card:hover{background:#56add7; color:#FFF; transition: background-color 0.3s;}
+.home #job-list .job-card h3{color: inherit; font-size:22px; margin-bottom:0;}
+.home #job-list .job-card .bigh3{max-width: 191px;word-wrap: break-word;margin: -12px auto auto auto;}
+.home #job-list .job-card h4{border-top: #DBDBDB solid 1px;padding-top: 5px;font-size: 14px;margin-top: 4px;font-weight: normal;color: inherit;}
+.home #job-list .job-card .location{text-transform: uppercase; display: inherit; font-size:12px; line-height: 15px; margin-bottom: 5px}
+.home #job-list .job-card-blank{min-height: 194px; min-width: 235px;}
+
+/* INTERNAL PAGE */
+.search main h1, .post h1 a, .category main h1,.archive main h1, .page main h2{color:#ED7034; font-size:42px; letter-spacing:5px; font-family:'bill_corp_m3super'; line-height: 52px; margin-bottom: 70px}
+.single-post h3, .search h2, .post h2, .category main h2, .archive main h2, .page main h3{margin-bottom:5px; font:19px 'bill_corp_m3super';}
+.single-post article li, .search p, .post p, .category p, .page main p, .page main ul{line-height:30px; margin-top:0}
+
+/* INTERNAL PAGE > Commons */
+.page .biglink{font-size:32px; line-height: 82px; color:inherit; color:#FFF}
+
+/* CATEGORY PAGE */
+.vcard .comment-meta,.post .details, main .date{margin-top:-20px; text-transform: uppercase; letter-spacing: 1px; font-size:13px}
+.archive .post, .category .post{margin-bottom:60px}
+.comment-reply-link, .details a, .single main p a, .view-article{color:#367da6}
+.categoried a:hover, .single main p a:hover, .view-article:hover{text-decoration: underline;}
+
+/* PAGINATION */
+section .pagination{text-transform: uppercase; font-size:22px}
+section .pagination a{color:#367da6}
+section .pagination .page-numbers{margin-right:10px}
+section .pagination .current{font-weight:bold}
+
+/* SINGLE POST PAGE */
+.single-post .details{margin-bottom:65px}
+.single-post .comment-reply-title{font-size:30px}
+.single-post .comment-notes{font-family:'bill_corp_m3medium_oblique'; text-transform: uppercase; font-size:14px; margin-top:-10px}
+.single-post article ul{display:table; margin-left:-10px}
+.single-post #respond{opacity: 0.2; transition: opacity 1.5s ease}
+
+.single-post .social-butons{display:flex; margin:20px auto 30px auto; padding:0; opacity:0.4; transition: opacity 0.5s ease;}
+.single-post .social-butons:hover{opacity:1;}
+.single-post .social-butons li{width: 100%; text-align:center}
+.single-post .social-butons:hover .fa-facebook-official{color: #3b5998}
+.single-post .social-butons:hover .fa-twitter-square{color: #55acee}
+.single-post .social-butons:hover .fa-pinterest-square{color: #cb2027}
+.single-post .social-butons:hover .fa-google-plus-square{color: #dd4b39}
+.single-post .social-butons:hover .fa-linkedin-square{color: #007bb5}
+
+/* COMMENTS */
+.comments ul{padding:0 0 0 10px}
+.comments ul li{list-style:none}
+.comments .comment{padding:40px; background: #f5f3ee; margin-bottom:30px}
+.comments .comment:last-child{margin-bottom:0}
+.comments .comment .vcard{text-transform: uppercase; clear:both; float:left; width:100%; margin-bottom:10px}
+.comments .comment .vcard .fn{font-style:normal; font-family:'bill_corp_m3super'; line-height:36px}
+.comments .comment .vcard .comment-meta{font-style:normal; margin-top:-10px}
+.comments .comment .avatar{float:left; margin-right:30px; border-radius:100%; width:60px; height:auto}
+.comments .comment-awaiting-moderation{font-weight: bold; letter-spacing: 1px}
+
+/* COMMENT FORM */
+.comment-form textarea, .comment-form label, .comment-form input{float:left; width: 100%}
+.comment-form label{margin-bottom:5px; text-transform: uppercase; font:18px 'bill_corp_m3super'; letter-spacing: 1px}
+.comment-form textarea, .comment-form input{width: 100%; border:#999 solid 3px; padding:10px; margin-bottom:30px; text-transform: uppercase; font-weight: bold}
+.comment-form input[type="submit"]{width: inherit;}
+
+/* INTERNAL PAGE > Clients */
+.clients .legend-over-title{line-height:35px; color:#666; text-transform: uppercase; font-size:20px; font-weight: bold}
+.clients .btn-register{padding:10px 20px; background: #56add7; text-transform: uppercase; color:#FFF; font:26px 'bill_corp_m3super'; letter-spacing: 2px; animation-name: pulse; animation-duration: 2s}
+.clients .btn-register:hover{background: #ed7034}
+.clients h2{margin:0 0 40px 0 !important;}
+.clients h2 span{font-size:39px}
+.clients .subtitle{color:#424242; margin-top:40px; font-size:22px}
+
+/* INTERNAL PAGE > Clients > Features */
+.clients .features{padding-top:40px; padding-bottom:40px; background: #e26b32}
+.clients .features p, .clients .features h4{color:#FFF; margin:0}
+.clients .features .icon{text-align:center}
+.clients .features h4{font-weight: normal; font-size:22px; margin-top:40px}
+.clients .features h4 a {color:#424242}
+
+/* INTERNAL PAGE > Clients > Benefits */
+.clients .benefits h3{font-size:22px; color:#424242}
+
+/* INTERNAL PAGE > Clinicians */
+.clinicians .bg{margin-top:-79px; padding-top:79px; height:612px; background: url('/wp-content/themes/staffdna//img/clinician_lady.jpg'); background-repeat: no-repeat; background-position: -80px 0;}
+.college-students .bg > .logo, .clinicians .bg > .logo{margin:9% 12% 3% 0}
+.college-students .bg h2, .clinicians .bg h2{width: 50%; color:#2376a7 !important; text-align:center; font-size: 38px; line-height: 43px; font-family: bill_corp_m3bold; letter-spacing: 2px;}
+.college-students #footer{background-image: url('/wp-content/themes/staffdna//img/bg_footer_purple.jpg'); border-top:0}
+.college-students #footer .btn{background-color: rgba(163, 59, 144, 0.61)}
+
+/* INTERNAL PAGE > College Students */
+.college-students .signup-button{background-color: #A33B90 !important}
+.college-students #header .menu{background-color: rgba(138, 48, 122, 0.83) !important; }
+.college-students #header .menu li:hover,.college-students .btn:hover,.college-students #header .social-buttons li:hover{background: #76456d !important;}
+.college-students .bg{margin-top:-81px; padding-top:81px; height:618px; background: url('/wp-content/themes/staffdna//img/college_girl.jpg'); background-repeat: no-repeat; background-position: -100px 0;}
+.college-students .bg > .logo{margin-right:18%}
+.college-students .bg h2{color:#A33B90 !important; margin-right:6%}
+
+/* INTERNAL PAGE > Contact Us */
+.contactus{text-transform: uppercase; font:20px 'bill_corp_m3super'; letter-spacing: 1px; text-align:center}
+.contactus form{width:90.6%; text-align:left; margin:auto; line-height: 40px}
+.contactus form p{margin:30px 0 65px 0}
+.contactus form{line-height: 50px}
+.search input, .contactus form input, .contactus form textarea{border:#CCC solid 3px; padding:10px; text-transform: uppercase;}
+.contactus form input[type="text"], .contactus form input[type="email"] {margin: 0 3px 0 3px}
+.contactus form textarea{width: 100%; height: 262px; margin:30px 0 30px 0}
+.comment-form input[type="submit"], .search .search-submit,.contactus form input[type="submit"]{border:0; color:#FFF; padding:20px 40px; margin-top:25px; font-size:30px; letter-spacing: 2px}
+.contactus form input[type="submit"]:hover,.contactus form input[type="submit"]:active{opacity:0.8 }
+
+/* SIDEBAR */
+.sidebar-widget{margin-top:35px}
+.sidebar-widget h3{margin-top:30px; letter-spacing: 1px}
+.sidebar-widget li{color:#424242; line-height: 30px}
+.sidebar-widget li:hover{color:#ED7034}
+
+/* FORM > Search */
+.search{margin-bottom:70px}
+.search .search-input{float:left; width: 153px; color:#999}
+.search .search-submit{margin:0 0 0 0; padding:4px 11px; border:0}
+
+/* Footer */
+#footer{height: 210px; padding-top:50px; background: url('/wp-content/themes/staffdna//img/bg_footer_light.jpg') no-repeat; margin-top:32px; border-top:#2476A7 solid 1px; color:white; text-transform: uppercase; }
+#footer .content{font-size:11px; letter-spacing: 1px; font-family: 'bill_corp_m3bold';}
+#footer .logo-white{display: inherit; margin: 25px 5px 5px 0}
+
+#footer .social-buttons{padding:0; text-align:right}
+#footer .btn{margin-left:5px; background: rgba(38, 113, 152, 0.69); color:#E3E3E3; font-size:22px;}
+#footer .btn:hover{background: #164D69; color:#FFF}
+#footer .social-buttons .btn a{height: 50px; padding:20px}
+#footer .social-buttons .visit-button a{font-family: 'bill_corp_m3super'; letter-spacing: 1px; font-size:16px}
+
+#footer .btn-contact-us{font-size:14px; margin:20px 0 0 0}
+
+/* CUSTOM SCROLL */
+.mCSB_buttonDown{background-color: #EAEAEA}
+
+
+/* ==========================================================================
+   Animations
+   ========================================================================== */
+@keyframes pulse {
+    0% {background-color: #56add7;}
+    50% {background-color: #2376a7}
+    100% {background-color: #56add7;}
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) {
+
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+	
+	/* INTERNAL PAGE > Contact Us */	
+	.contactus form input[name="name"] {margin: 0 0 30px 6px;}
+	.contactus form input[type="text"] {width:70%;}	
+}
+
+/* Medium and Large desktops and laptops */
+@media (min-width: 1025px) {
+	#header .menu ul .overflow > a {line-height: 20px; top: -10px; position: relative;}
+	
+	.home #job-list{width:103%;}
+	
+	.home #browse_jobs .nurse-girl{width: 300px; height: auto; margin: -10px 0 -50px 0; z-index: 1;}
+	
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+	/* HELPERS */
+	.hidden-desktop{display: block  !important;}  
+    .hidden-tablet {display: none;}
+    
+    /* HEADER */
+    #header{position:relative}
+    #header .logo{margin-left:30px}
+    
+    #header #btn-menu{background:none;}
+    #header #btn-menu.active{background: #424242 !important}
+    #header #btn-menu{background:none; margin-top:-1px; border-top:3px; text-align:left; line-height: 45px; height: 60px}
+    
+    #collapse-menu{padding-left: 30px}
+    
+    #header .menu{height: auto}
+	#header .menu ul > li{display: flex; float:left; width: 50%}
+	#header .menu ul > li > a{line-height: 63px;}
+	#header .menu.active{background: rgb(58, 133, 177) !important}
+    
+    /* HOME */
+    .home #bg{height:560px; background-position: -480px top; padding:110px 0 0 180px; margin-top:-101px}
+    .home #bg p{font-size:32px;}
+    .home #bg img{margin:auto}
+    .home .icon-badge{margin:-80px 5px 0 60px !important}
+    .home .badge-description{margin:-25px 70px 0 0 !important}
+    
+    /* BROWSE JOBS */
+    .home #browse_jobs .nurse-girl{margin:40px 0 -90px 0}
+    .home #browse_jobs .search-jobs-button{margin:-57px 0 0 138px}
+    .home #browse_jobs .build-button{width: 46%; height:194px !important; overflow: hidden; margin-left: 51.3%; height: inherit;}
+	.home #browse_jobs .build-button img{width: 400px; height: auto; margin:15px 0 0 -20px}
+    
+    .home #job-list{margin-left:20px}
+    .home .browse-jobs-title{margin:0 0 20px 20px !important}    
+    .home #job-list .job-card{min-width: 100%; padding-top:30px; padding-bottom:30px}        	   	
+	.home #job-list .job-card h4{line-height: 18px}
+	.home #job-list .job-card .bigh3{max-width: 124px; font-size:18px}
+	.home #job-list .job-card .location{text-overflow: ellipsis;white-space: nowrap;max-width: 120px;overflow: auto; font-size:14px}
+	.home #job-list .job-card p{line-height: 20px; font-size:13px}
+	
+	/* INTERNAL PAGES > Clinicians */
+	.clinicians .bg{background-position: -200px 0}
+	.clinicians .bg h2{font-size: 30px; margin: 19% 1% 0 0;}
+	
+	/* INTERNAL PAGES > Students */
+	.college-students .bg{background-position: -290px 0}
+	.college-students .bg h2{margin-top: 13%;}	
+	
+	/* FOOTER */
+	#footer .social-buttons{margin-top:30px; text-align: right}
+	#footer .social-buttons .btn a{padding:0;}
+	
+	/* CUSTOM SCROLL */
+	.mCSB_container{width:auto !important;}
+	.mCSB_scrollTools_horizontal{display: none !important;}		
+    
+}
+
+/* Landscape phones and portrait tablets */
+@media (max-width: 767px) {	
+	/* HELPERS */
+	.hidden-desktop {display: block !important;}  
+    .hidden-phone {display: none}  
+	
+	/* HEADER */			
+	#header #btn-menu{background:none; border-top:3px; text-align:left; margin:0; height: auto; line-height: 40px}
+	#header #btn-menu.active{background: #424242 !important}
+	#header .logo{margin:-10px 0 0 0}
+	#header .signup-button{margin:10px 10px 0 0}	
+	#header .menu{height: auto}
+	#header .menu ul > li{display: inherit; width: 100%; text-align: left}
+	#header .menu ul > li > a{line-height: 63px;}
+	#header .menu.active{background: rgb(58, 133, 177) !important}
+	
+	/* HOME */
+	.home #bg{padding:150px 0 0 120px !important; text-align:center; background-position: -500px 27px}		
+	.home #bg p{width:95%; font-size:14px; line-height: 25px;}
+	.home #bg .active-text{font-size:14px}
+	.home #bg .loading-counter{width: 75%}
+	.home #bg .counter{width: 250px; margin:0 20px 20px 0; font-size:14px; text-align:right}
+	.home #bg .counter > .box{margin:0 0 -12px 0; background: rgba(255, 255, 255, 0.88); border-widht:3px}
+		
+	/* HOME > Features */
+	.home #features p{ margin-bottom:50px}
+	.home .nurse-girl{width: 40%; height: auto;}
+	
+	/* BROWSE JOBS */
+	.home #browse_jobs .build-button{position:inherit; z-index:inherit; margin:inherit;}
+	.home #browse_jobs .build-button img{width:96%; height: auto}
+	.home #browse_jobs .search-jobs-button{font-size: 14px; margin: 0 0 20px 0; float: left; position: relative;}
+	
+	.home #job-list{margin-left:0; width:104%; height: auto}
+	.home #job-list li{float:left; width:95%}
+	.home #job-list li:nth-child(1){margin-top:20px}
+	.home #job-list li:nth-child(3), .home #browse_jobs li:nth-child(4)  {display:none}
+	.home #job-list .job-card{width:100%; ; margin-bottom:0}	
+	
+	/* BROWSE JOBS > SCROLL */
+	.mCSB_scrollTools{margin: 0 15px 0 0;}
+	
+	/* INTERNAL PAGE > Contact Us */	
+	.contactus form{width: 100%}
+	.contactus form input[name="name"] {margin: 0 5px 30px 6px;}
+	
+	/* INTERNAL PAGE > Clients */
+	.clients .features h4{font-size:18px}
+	.features > div:nth-child(2) .icon{margin-top:50px}			
+	
+	/* FOOTER */
+	#footer{height:auto; background-size:cover}
+	#footer .social-buttons{text-align:left; max-width: 300px}
+
+}
+
+/* Phones on landscape only */
+@media all and (max-width: 767px) and (orientation:landscape) {	
+	/* HEADER */	
+	#header .menu ul > li { float: left; width: 50%; text-align: left;}
+	
+	/* HOME */
+	.home #bg{height: 580px; }
+	.home #bg > img{display: block; margin:auto}
+	.home #bg p{font-size:22px}
+	.home #bg .icon-badge{margin-bottom:15px}
+	.home #bg .active-text{margin:0 0 0 18px}
+	.home #bg .counter{margin:10px 0 50px 120px; text-align:left; width: 380px; font-size:}
+	.home #bg .counter > .box{margin-right:10px}
+	
+	/* HOME > Features */
+	.home #features{height:260px}
+	.home #features h2{font-size:20px}
+	.home #features .col-1-3{display:table-cell; width: 30%}
+	.home #features .content{max-width: initial}
+	
+	/* BROWSE JOBS */	
+	.home #browse_jobs h3{margin:0 0 10px auto}
+	.home #browse_jobs .nurse-girl{margin:-110px 20px -105px 0}
+	#browse_jobs > div.grid.grid-pad > div > div > p:nth-child(2){width: 65%}
+	.home #job-list{width:103%;}	
+	
+	/* INTERNAL PAGES > Students */
+	.clinicians .bg, .college-students .bg{margin-top:-61px}
+	.clinicians .bg h2, .college-students .bg h2{float:left; width:auto; margin-top:360px; font-size:28px; background: rgba(255, 255, 255, 0.8); padding:10px}
+	.college-students #header .menu.active{background: rgb(169, 73, 150) !important}
+	
+	/* CUSTOM SCROLL */
+	.mCSB_scrollTools{margin-left:-20px}
+	
+	/* FOOTER */
+	#footer{padding:20px}
+	#footer .social-buttons{margin:20px 0 0 -10px; max-width:initial}
+	#footer .social-buttons .btn{font-size:18px}
+	#footer .logo-footer{margin-left:10px}
+	#footer .btn-contact-us{  margin: 25px 0 0 -5px; line-height: 29px; width: 91.2%;}
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+	/* HEADER */
+ 	#header .menu ul > li > a{line-height: 63px;}
+	#header .menu.active{background: rgba(29,112,159,1) !important}
+	#header .signup-button{position:absolute; right:0; top:0; background:#ED7034; padding:10px; margin:0; font-size:inherit; border-radius:0; border-bottom-left-radius:20px; text-align: left; text-transform: uppercase; font-family: 'bill_corp_m3extrabold'; font-weight: normal;}
+	
+	/* HOME */	
+	.home #bg{padding: 90px 0 0 85px !important; background-size: 696px 464px; background-position: -236px 23px; height: 464px !important;}	
+	.home #bg p{max-width: 235px; margin:5px auto 10px auto;}
+	.home #bg .active-text{display: inline}
+	.home #bg .icon-badge{position:absolute; left:0;  margin:0 0 0 40px; text-align: center;}
+	.home #bg .badge-description{margin:50px auto 30px 30%; font-size:16px; max-width: 200px}
+	.home #bg .counter{width: 180px; line-height: 30px; margin-top:5px}
+	.home #bg .counter > .box{font-size:24px; min-width:inherit; border-width: 2px; margin:0; text-align:left; padding:5px 0 5px 10px; line-height: 20px}
+	.home #bg .counter .digit:before{font-size:25px; top:-2px}	
+	
+	/* BROWSE JOBS */
+	.home #browse_jobs .nurse-girl{margin:2px 20px -112px 0}
+	
+	/* INTERNAL PAGES */
+	.page{padding:0}
+	.page h2{font-size:30px}	
+	
+	/* INTERNAL PAGES > College Students and Clinicians */
+	.clinicians .bg h2{margin-top:240px}	
+	
+	/* INTERNAL PAGES > Students */
+	.clinicians .bg, .college-students .bg{margin-top:-61px}
+	.clinicians .bg h2, .college-students .bg h2{float:left; width:auto; margin-top:270px; font-size:28px; background: rgba(255, 255, 255, 0.8); padding:10px}
+	.college-students #header .menu.active{background: rgb(169, 73, 150) !important}
+	
+	/* FOOTER */
+	#footer{padding:10px 20px 20px 20px}
+	#footer .logo-footer{margin:0 0 35px 10px}
+	#footer .social-buttons .btn a{padding:0px; font-size:18px}
+	#footer .social-buttons .visit-button{float:left; margin-bottom:20px;}	
+	#footer .btn-contact-us{margin: -12px 0px 20px 5px; line-height: 33px;}
+	
+	/* CUSTOM SCROLL */
+	.mCSB_container{width:auto !important;}
+	.mCSB_scrollTools_horizontal{display: none !important;}
+
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 360px) {
+	.home #bg .badge-description{width: 255px;}
+}
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.visible {
+	opacity: 1 !important;
+	display: block;
+}
+
+.hidden-desktop {
+	display: none;
+} 
+
+.hide {
+	display:none !important;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+.inline {
+	list-style:none;
+}
+
+.inline li {
+	display: inline;
+}
+
+.right {
+	float: right;
+}
+
+.left {
+	float: left;
+}
+
+.text-center {
+	text-align: center;	
+}
+
+.boxshadow-left {
+	box-shadow: -4px 4px 4px -1px rgba(128,128,128,0.53) ; transition: all 0.5s ease;
+}
+
+.boxshadow-right {
+	box-shadow: 4px 4px 4px -1px rgba(128,128,128,0.53); transition: all 0.5s ease;
+}
+
+.boxshadow-none {
+	box-shadow: none !important; transition: all 0.5s ease;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
